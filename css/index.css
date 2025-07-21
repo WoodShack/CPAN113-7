@@ -1,9 +1,15 @@
 #event-container{
-    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#header-alert{
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
 }
 
 .card{
-    margin-top: 60px;
+    margin-top: 30px;
     border: 5px solid #a1a1a1;
 }
 
@@ -14,4 +20,5 @@
 .btn{
     font-weight: bold;
     min-width: 200px;
+    margin-top: 10px;
 }
