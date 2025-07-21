@@ -7,6 +7,8 @@ let formEventElement = document.getElementById("form-event-form");
 let formEventStatus = document.getElementById("form-event-status");
 let focusEventElement = document.getElementById("focus-event-input");
 let focusEventStatus = document.getElementById("focus-event-status");
+let delegateEventElement = document.getElementById("delegate-event-container");
+let delegateEventStatus = document.getElementById("delegate-event-status");
 
 //Functions
 function addMouseEvent(status){
@@ -23,6 +25,10 @@ function addFormEvent(status){
 
 function addFocusEvent(status){
     focusEventStatus.innerHTML = "Status: "+status;
+}
+
+function addDelegateEvent(status){
+    delegateEventStatus.innerHTML = "Status: "+status;
 }
 
 //Mouse event
@@ -68,4 +74,11 @@ focusEventElement.addEventListener("focus", function(event) {
 
 focusEventElement.addEventListener("blur", function(event) {
     addFocusEvent("Lost Focus");
+});
+
+//Delegate event
+delegateEventElement.addEventListener("click", function(event) {
+    if (event.target.tagName === 'A') {
+        addDelegateEvent(event.target.textContent+" clicked!");
+    }
 });
