@@ -5,6 +5,8 @@ let keyboardEventElement = document.getElementById("keyboard-event-input");
 let keyboardEventStatus = document.getElementById("keyboard-event-status");
 let formEventElement = document.getElementById("form-event-form");
 let formEventStatus = document.getElementById("form-event-status");
+let focusEventElement = document.getElementById("focus-event-input");
+let focusEventStatus = document.getElementById("focus-event-status");
 
 //Functions
 function addMouseEvent(status){
@@ -17,6 +19,10 @@ function addKeyboardEvent(status){
 
 function addFormEvent(status){
     formEventStatus.innerHTML = "Status: "+status;
+}
+
+function addFocusEvent(status){
+    focusEventStatus.innerHTML = "Status: "+status;
 }
 
 //Mouse event
@@ -53,4 +59,13 @@ formEventElement.addEventListener("submit", function(event) {
 
 formEventElement.addEventListener("change", function(event) {
     addFormEvent("Changed");
+});
+
+//Focus event
+focusEventElement.addEventListener("focus", function(event) {
+    addFocusEvent("Has Focus");
+});
+
+focusEventElement.addEventListener("blur", function(event) {
+    addFocusEvent("Lost Focus");
 });
